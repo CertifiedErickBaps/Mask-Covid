@@ -5,12 +5,18 @@ import Navbar from "../components/Navbar";
 //Styles
 import "../styles/Home.scss";
 
+//Components
 import DemoInformation from "./DemoInformation";
 import LogoTransition from "./LogoTransition";
 import About from "./About";
 import Footer from "../components/Footer";
 
+//Data
+import data from "../data/data.js";
+
 const Home = () => {
+  const title = data[0].title;
+  const subtitle = data[0].subtitle;
   return (
     <>
       <div className="banner-background" id="home">
@@ -18,26 +24,25 @@ const Home = () => {
         <div className="home-container">
           <div className="title-container">
             <div className="title-subcontainer">
-              <span className="first-title">Save &nbsp;</span>
-              <span>lives</span>
+              <span className="first-title">{title.first} &nbsp;</span>
+              <span>{title.second}</span>
             </div>
             <div className="title-subcontainer">
-              <span>Stay &nbsp;</span>
-              <span className="second-title">safe</span>
+              <span>{title.third} &nbsp;</span>
+              <span className="second-title">{title.fourth}</span>
             </div>
-
           </div>
           <div className="home-information-container">
             <div className="paragraph-container">
               <p>
-                <span className="first-paragraph">Why? Using our facial recognition software for the use of masks and thus prevent infection.</span>
+                <span className="first-paragraph">{subtitle.first}</span>
               </p>
               <p>
-                <span className="second-paragraph">How? Just click on the button to use the demo and contact us.</span>
+                <span className="second-paragraph">{subtitle.second}</span>
               </p>
             </div>
             <div className="button-container">
-              <a className="btn waves-effect waves-light">Use demo</a>
+              <a className="btn waves-effect waves-light">{subtitle.btn}</a>
             </div>
           </div>
         </div>
@@ -45,10 +50,10 @@ const Home = () => {
           <img className="image-responsive" src={imageStatue} alt="Statue with Face Mask"/>
         </div>
       </div>
-      <DemoInformation/>
-      <LogoTransition/>
-      <About/>
-      <Footer/>
+      <DemoInformation data={data[1]}/>
+      <LogoTransition data={data[2]}/>
+      <About data={data[3]}/>
+      <Footer data={data[4]}/>
     </>
   );
 };

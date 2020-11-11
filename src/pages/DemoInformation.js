@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/DemoInformation.scss";
 import demoImage from "../images/weddingMask.jpg";
 
-const DemoInformation = () => {
+const DemoInformation = ({data}) => {
   return (
     <div className="demo" id="how">
       <div className="information-container">
@@ -10,15 +10,12 @@ const DemoInformation = () => {
         <div className="info">
           <p>
           <span>
-            Machine learning is a subarea of ​​Artificial Intelligence that has shown high efficiency in such situations
-            to understand, visualize and understand information appropriately.
+            {data.information.first}
           </span>
           </p>
           <p>
           <span>
-            Due to the current situation, one of the rules is to wear a mask as a protection and hygiene measure. Due to
-            this situation, there is a need to be able to recognize whether people are wearing face masks, since it is
-            currently a mandatory measure in most centers or institutions.
+            {data.information.second}
           </span>
           </p>
         </div>
@@ -26,8 +23,7 @@ const DemoInformation = () => {
           <div className="flex-container">
             <p>
           <span>
-            “What you don’t do determines what you can do.”
-            Tim Ferriss
+            {data.phrase}
           </span>
             </p>
           </div>

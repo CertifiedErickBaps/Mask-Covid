@@ -3,21 +3,21 @@ import logo from "../images/logo.svg";
 import github from "../icons/Github.svg";
 import "../styles/Footer.scss";
 
-const Footer = () => {
+const Footer = ({data}) => {
   return (
     <footer id="footer">
       <div className="footer-container">
         <div className="contact">
           <div className="title-contact">
             <p>
-              <span>Do you have any doubts about how it was done?</span>
+              <span>{data.title}</span>
             </p>
           </div>
           <div className="input-contact">
             <input placeholder="Leave your email" type="email" className="validate"/>
           </div>
           <div className="button-container">
-            <a className="btn waves-effect waves-light">Send</a>
+            <a className="btn waves-effect waves-light">{data.btn}</a>
           </div>
         </div>
         <div className="logo-footer">

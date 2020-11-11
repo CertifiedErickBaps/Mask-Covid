@@ -1,12 +1,12 @@
 import React from 'react';
 import "../styles/LogoTransition.scss";
 
-const LogoTransition = () => {
+const LogoTransition = ({data}) => {
   return (
     <div className="logo-container">
       <div className="text">
           <span>
-            FACE
+            {data.phrase}
           </span>
       </div>
     </div>
