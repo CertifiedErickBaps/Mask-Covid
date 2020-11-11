@@ -1,0 +1,70 @@
+@import "./Colors.scss";
+
+.about-container {
+  position: relative;
+  background: $primary;
+  height: 100%;
+  .title-about {
+    display: flex;
+    justify-content: end;
+    height: 200px;
+    padding: 0 2rem;
+    p {
+      span {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        color: $white;
+      }
+      .color-orange {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        color: $secondary;
+      }
+    }
+  }
+
+  .items-container {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .item {
+      background: $third;
+      border-radius: 15px;
+      width: 500px;
+      height: 400px;
+      padding: 2rem;
+      margin: 2rem 0;
+      .icon {
+        img {
+          width: auto;
+        }
+      }
+    }
+
+    .title-item {
+      p {
+        span {
+          font-style: normal;
+          font-weight: 900;
+          font-size: 26px;
+          color: $white;
+        }
+      }
+    }
+
+    .info-item {
+      p {
+        span {
+          font-style: normal;
+          font-weight: 900;
+          font-size: 20px;
+          color: #7C829A;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "./Colors.scss";
+
+.demo {
+  position: relative;
+  background-color: $primary;
+
+  .information-container {
+    display: flex;
+    justify-content: center;
+    height: 1024px;
+    img {
+      position: absolute;
+      width: 590px;
+      height: 600px;
+      object-fit: contain;
+      top: 10rem;
+      left: 2rem;
+    }
+
+    .info {
+      position: absolute;
+      width: 100%;
+      max-width: 850px;
+      right: 2rem;
+      top: 15rem;
+
+      p {
+        span {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 26px;
+          color: $white;
+          line-height: 60px;
+        }
+      }
+    }
+
+    .phrase {
+      display: flex;
+      align-items: end;
+      margin-bottom: 5rem;
+      .flex-container {
+        justify-content: center;
+
+        p {
+          span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 38px;
+            text-align: center;
+            color: $white;
+          }
+        }
+      }
+
+    }
+  }
+}

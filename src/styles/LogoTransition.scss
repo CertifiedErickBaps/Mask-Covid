@@ -1,0 +1,26 @@
+@import "./Colors.scss";
+
+.logo-container {
+  position: relative;
+  background: $primary;
+  height: 650px;
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      position: absolute;
+      bottom: 50%;
+      margin-bottom: -320px;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 400px;
+      line-height: 754px;
+      background-image: url("../images/maleMask.jpg");
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}

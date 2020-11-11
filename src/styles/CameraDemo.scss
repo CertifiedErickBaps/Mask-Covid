@@ -1,0 +1,74 @@
+@import "./Colors.scss";
+
+.container-camera {
+  position: relative;
+  background: $primary;
+  height: 100%;
+  padding: 0 2rem;
+
+  .title-camera {
+    padding: 2rem 0;
+
+    p {
+      span {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        color: $white;
+      }
+
+      .color-orange {
+        color: $secondary;
+      }
+    }
+  }
+
+  .info-camera {
+    p {
+      span {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 26px;
+        color: $white;
+      }
+    }
+  }
+
+  .camera-image {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+
+    .c-camera-feed {
+      .c-camera-feed__viewer {
+        margin: 2rem 0;
+      }
+      button {
+        background-color: $secondary;
+        font-weight: 600;
+        font-size: 20px;
+        height: 50px;
+      }
+      .c-camera-feed__stage {
+        margin: 2rem 0;
+        canvas {
+          background: $third;
+        }
+      }
+      .output {
+        p {
+          span {
+            font-style: normal;
+            font-weight: 900;
+            font-size: 26px;
+            color: $white;
+          }
+          .color-orange {
+            color: $secondary;
+          }
+        }
+      }
+    }
+
+  }
+}
