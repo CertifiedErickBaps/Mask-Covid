@@ -6,6 +6,9 @@ import {CameraFeed} from '../components/CameraFeed';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+//Data
+import data from "../data/data.js";
+
 // Upload to local seaweedFS instance
 const uploadImage = async file => {
   const formData = new FormData();
@@ -40,7 +43,7 @@ const CameraDemo = () => {
           <CameraFeed sendFile={uploadImage}/>
         </div>
       </div>
-      <Footer/>
+      <Footer data={data[4]}/>
     </>
   );
 };

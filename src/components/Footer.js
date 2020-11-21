@@ -4,6 +4,7 @@ import github from "../icons/Github.svg";
 import "../styles/Footer.scss";
 
 const Footer = ({data}) => {
+  console.log(data)
   return (
     <footer id="footer">
       <div className="footer-container">
