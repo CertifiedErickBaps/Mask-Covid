@@ -61,7 +61,7 @@ class DataRetriever(torch_data.Dataset):
 
 
 IMAGE_SIZE = (512, 512)
-valid_paths = ["notobama.jpg"]
+valid_paths = ["test_image.jpg"]
 valid_targets = [1]
 
 
