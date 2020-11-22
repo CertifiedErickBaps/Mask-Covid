@@ -18,6 +18,11 @@ const DemoInformation = ({data}) => {
             {data.information.second}
           </span>
           </p>
+          <p>
+          <span>
+            {data.information.third}
+          </span>
+          </p>
         </div>
         <div className="phrase">
           <div className="flex-container">

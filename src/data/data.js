@@ -22,8 +22,9 @@ const data = [
   {
     "phrase": "“I wear my mask to protect you. \nYou wear your mask to protect me.”\n Dr. Jay C. Butler, CDC",
     "information": {
-      "first": "Machine learning is a subarea of Artificial Intelligence that has shown high efficiency in such situations\n            to understand, visualize and understand information appropriately.",
-      "second": "Due to the current situation, one of the rules is to wear a mask as a protection and hygiene measure. Due to\n            this situation, there is a need to be able to recognize whether people are wearing face masks, since it is\n            currently a mandatory measure in most centers or institutions."
+      "first": "Machine learning is an application of Artificial Intelligence that provides systems the ability\n            to understand, visualize and improve from experience without programming.",
+      "second": "Due to the current pandemic, one of the guidelines is to wear a facial covering as a protective measure. Given\n            this situation, there is a need to be able to recognize whether people are wearing face masks or not, since it is\n            currently a mandatory measure in most public places or institutions.",
+      "third":"With our ML model, we can monitor crowded places and count the number of mask wearers, information that can then be used in different types of analysis."
     }
   },
   {
@@ -31,40 +32,40 @@ const data = [
   },
   {
     "title": {
-      "first": "How does facial",
-      "second": "recognition",
+      "first": "How does our",
+      "second": "facial recognition model",
       "third": "work?"
     },
     "items": [
       {
         icon: database,
-        title: "Data extraction",
-        info: "We train a deep learning model to classify whether a person is wearing a mask or not and we find a good dataset with a fair amount of images for both classes."
+        title: "1. Data Understanding",
+        info: "We obtain a dataset of many different people in situations where they are both wearing and not wearing masks."
       },
       {
         icon: dataset,
-        title: "Building the dataset class",
-        info: "We build the Dataset class which will be used for querying samples by batches in a way interpretable by PyTorch."
+        title: "2. Preparing our Data",
+        info: "We alter, distort and modify our dataset images in order to improve the robustness of our ML model."
       },
       {
         icon: user,
-        title: "Building our face mask detector model",
-        info: "Thanks to obtaining multiple photos we can detect the differences between having and not having a mask."
+        title: "3. Connecting our Data with the ML algoritm",
+        info: "We connect our dataset to our ML algorithm in Google Colab with the use of a CSV file directory. Additionally, we split our dataset into two groups: 'Predict' and 'Valid'."
       },
       {
         icon: training,
-        title: "Training our model",
-        info: "We use machine learning to train our model and have it ready to predict the next photo."
+        title: "4. Training our model",
+        info: "We use Pytorch Machine Learning to train our model, which learns from the images in our 'Predict' category."
       },
       {
         icon: globe,
-        title: "Testing our model on real data",
-        info: "We use \"PyTorch\" for the deep learning of the photos and the detection of the masks."
+        title: "5. Testing our model",
+        info: "We evaluate the accuracy of our model by having it predict whether or not people are wearing face masks in our 'Valid' category."
       },
       {
         icon: qrcode,
-        title: "Detect face and mask in the image",
-        info: "Extract the data frames in the image in real time and detected faces, along with the predictions computed by our model."
+        title: "6. Deploy and Improve",
+        info: "Our model is exported deployed in a Python Flask server, Try it out: Mask Detection Demo. This is our initial version of our algorithm, which can then be improved in subsequent iterations."
       }
     ]
   },
