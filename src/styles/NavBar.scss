@@ -7,6 +7,9 @@ nav {
   .nav-wrapper {
     height: 100%;
     padding: 0 2rem;
+    -webkit-box-shadow: 0 8px 6px -6px #001;
+    -moz-box-shadow: 0 8px 6px -6px #001;
+    box-shadow: 0 8px 6px -6px #001;
     .flexbox-container {
       height: 100%;
       display: flex;

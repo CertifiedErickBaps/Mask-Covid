@@ -5,19 +5,17 @@ import "../styles/CameraDemo.scss";
 import {CameraFeed} from '../components/CameraFeed';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Webcam from "react-webcam";
 
 //Data
 import data from "../data/data.js";
 
-// Upload to local seaweedFS instance
-const uploadImage = async file => {
-  const formData = new FormData();
-  formData.append('file', file);
-  console.log(formData);
-  // Connect to a seaweedfs instance
-};
+const WebcamComponent = () => <Webcam />;
+
 
 const CameraDemo = () => {
+
+
   return (
     <>
       <Navbar/>
@@ -25,23 +23,28 @@ const CameraDemo = () => {
         <div className="title-camera">
           <p>
             <span>
-              Facial &nbsp;
+              Mask‏‏‎‏‏‎  ‎
             </span>
             <span className="color-orange">
-              recognition &nbsp;
+              Detection‏‏‎ ‎
+            </span>
+            <span>
+              Demo
             </span>
           </p>
         </div>
         <div className="info-camera">
           <p>
               <span>
-               Capture image from USB webcamera and upload to recognize
+               Test our model by uploading an image!
               </span>
           </p>
         </div>
+
         <div className="camera-image">
-          <CameraFeed sendFile={uploadImage}/>
+          <CameraFeed/>
         </div>
+
       </div>
       <Footer data={data[4]}/>
     </>

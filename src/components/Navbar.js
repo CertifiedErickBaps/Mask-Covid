@@ -17,10 +17,10 @@ const Navbar = () => {
             <img src={logo} alt="Logo Face Mask"/>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li><NavHashLink smooth to="/#home" activeStyle={{color: '#ED6229'}}>Home</NavHashLink></li>
-              <li><Link to="/demo">Demo</Link></li>
-              <li><NavHashLink smooth to="/#how" activeStyle={{color: '#ED6229'}}>How?</NavHashLink></li>
-              <li><NavHashLink smooth to="/#about" activeStyle={{color: '#ED6229'}}>About</NavHashLink></li>
-              <li><NavHashLink smooth to="/#footer" activeStyle={{color: '#ED6229'}}>Contact</NavHashLink></li>
+              <li><NavHashLink smooth to="/#how" activeStyle={{color: '#ED6229'}}>Our Cause</NavHashLink></li>
+              <li><NavHashLink smooth to="/#about" activeStyle={{color: '#ED6229'}}>Our Model</NavHashLink></li>
+                <li><Link to="/demo">Mask Detection Demo</Link></li>
+              <li><NavHashLink smooth to="/#footer" activeStyle={{color: '#ED6229'}}>Contact Us</NavHashLink></li>
             </ul>
           </div>
         </div>

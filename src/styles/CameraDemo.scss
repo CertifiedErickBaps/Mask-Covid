@@ -48,7 +48,25 @@
         font-weight: 600;
         font-size: 20px;
         height: 50px;
+        margin: 20px;
       }
+      input {
+        background-color: $secondary;
+        font-weight: 500;
+        font-size: 15px;
+        height: 50px;
+        margin: 50px;
+        padding:5px;
+      }
+      img{
+      max-width:450px;
+      max-height:450px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+      }
+
       .c-camera-feed__stage {
         margin: 2rem 0;
         canvas {
@@ -57,14 +75,17 @@
       }
       .output {
         p {
+          text-align: center;
           span {
             font-style: normal;
             font-weight: 900;
             font-size: 26px;
             color: $white;
+
           }
           .color-orange {
             color: $secondary;
+            text-align: center;
           }
         }
       }

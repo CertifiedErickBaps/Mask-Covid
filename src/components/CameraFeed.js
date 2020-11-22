@@ -1,106 +1,64 @@
 import React, {Component} from 'react';
+import Webcam from "react-webcam";
+import axios from 'axios';
+
+const WebcamComponent = () => <Webcam />;
+
+
 
 export class CameraFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image_jpg: null
+      file: null,
+      status: null
     }
+
+    this.uploadImage = this.uploadImage.bind(this)
+
   }
 
-  /**
-   * Processes available devices and identifies one by the label
-   * @memberof CameraFeed
-   * @instance
-   */
-  processDevices(devices) {
-    devices.forEach(device => {
-      console.log(device.label);
-      this.setDevice(device);
-    });
-  }
+  uploadImage = event => {
 
-  /**
-   * Sets the active device and starts playing the feed
-   * @memberof CameraFeed
-   * @instance
-   */
-  async setDevice(device) {
-    const {deviceId} = device;
-    const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: {deviceId}});
-    this.videoPlayer.srcObject = stream;
-    this.videoPlayer.play();
-  }
+    try {
+      this.setState({
+       file: URL.createObjectURL(event.target.files[0])
+     })
 
-  /**
-   * On mount, grab the users connected devices and process them
-   * @memberof CameraFeed
-   * @instance
-   * @override
-   */
-  async componentDidMount() {
-    const cameras = await navigator.mediaDevices.enumerateDevices();
-    this.processDevices(cameras);
-  }
+    } catch (error) {
+      console.error(error);
+    }
 
-  /**
-   * Handles taking a still image from the video feed on the camera
-   * @memberof CameraFeed
-   * @instance
-   */
-  takePhoto = () => {
-    const {sendFile} = this.props;
-    const context = this.canvas.getContext('2d');
-    context.drawImage(this.videoPlayer, 0, 0, 680, 360);
-    this.canvas.toBlob(sendFile);
+   const fd = new FormData();
 
-    // Useful for image
-    // this.canvas.toBlob(function(blob) {
-    //   let newImg = document.createElement("img"),
-    //     url = URL.createObjectURL(blob);
-    //
-    //   newImg.onload = function() {
-    //     // no longer need to read the blob so it's revoked
-    //     URL.revokeObjectURL(url);
-    //   };
-    //
-    //   newImg.src = url;
-    //   document.body.appendChild(newImg);
-    // });
-    // this.setState({image_jpg: this.canvas.toDataURL("image/jpeg", 1.0)});
+  fd.append('Image',event.target.files[0],event.target.files[0].name)
+
+
+   axios.post("http://127.0.0.1:5000/image",fd)
+   .then(res=> {
+     const json = res.data
+     this.setState({
+      status: json.status
+    })
+      console.log(this.state.status)
+   });
   };
 
+
   render() {
-    console.log(this.state.image_jpg);
     return (
       <div className="c-camera-feed">
-        <div className="c-camera-feed__viewer">
-          <video ref={ref => (this.videoPlayer = ref)} width="680" heigh="360"/>
-        </div>
-        <button className="btn waves-effect waves-light" onClick={this.takePhoto}>Take photo</button>
-        <form action="#">
-          <div className="file-field input-field">
-            <div className="btn">
-              <span>Load a image</span>
-              <input type="file"/>
-            </div>
-            <div className="file-path-wrapper">
-              <input className="file-path validate" type="text"/>
-            </div>
-          </div>
-        </form>
-        
-        <div className="c-camera-feed__stage">
-          <canvas width="680" height="360" ref={ref => (this.canvas = ref)}/>
+
+        <input className="btn waves-effect" type="file" onChange={this.uploadImage}/>
+        <div>
+          <img src={this.state.file}/>
         </div>
 
-        <div>
-          <img src={this.state.image_jpg} alt=""/>
-        </div>
+        {this.state.status == 1 && (
         <div className="output">
           <p>
             <span>
-              You are not using mask
+              You are not wearing a mask.
             </span>
           </p>
           <p>
@@ -108,7 +66,26 @@ export class CameraFeed extends Component {
               Score: 99%
             </span>
           </p>
+
         </div>
+      )}
+
+      {this.state.status == 0 && (
+      <div className="output">
+        <p>
+          <span>
+            You are wearing a mask!
+          </span>
+        </p>
+        <p>
+          <span className="color-orange">
+            Score: 99%
+          </span>
+        </p>
+
+      </div>
+    )}
+
       </div>
     );
   }

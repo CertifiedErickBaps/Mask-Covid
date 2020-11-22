@@ -1,6 +1,7 @@
 import React from 'react';
 import imageStatue from "../images/mask.png";
 import Navbar from "../components/Navbar";
+import {BrowserRouter as Router, Switch, Link, Route, NavLink} from "react-router-dom";
 
 //Styles
 import "../styles/Home.scss";
@@ -24,12 +25,12 @@ const Home = () => {
         <div className="home-container">
           <div className="title-container">
             <div className="title-subcontainer">
-              <span className="first-title">{title.first} &nbsp;</span>
-              <span>{title.second}</span>
+              <span className="first-title">{title.first} </span>
+              <span>{title.second},</span>
             </div>
             <div className="title-subcontainer">
-              <span>{title.third} &nbsp;</span>
-              <span className="second-title">{title.fourth}</span>
+              <span>{title.third} </span>
+              <span className="second-title">{title.fourth}.</span>
             </div>
           </div>
           <div className="home-information-container">
@@ -42,7 +43,9 @@ const Home = () => {
               </p>
             </div>
             <div className="button-container">
-              <a className="btn waves-effect waves-light">{subtitle.btn}</a>
+            <Link to='/demo'>
+              <button className="btn waves-effect waves-light">{subtitle.btn}</button>
+              </Link>
             </div>
           </div>
         </div>

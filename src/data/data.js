@@ -14,26 +14,26 @@ const data = [
       "fourth": "safe"
     },
     "subtitle": {
-      "first": "Why? Using our facial recognition software for the use of masks and thus prevent infection.",
-      "second": "How? Just click on the button to use the demo and contact us.",
-      "btn": "Use demo"
+      "first": "How? By using our facial recognition software, powered by machine learning for the detection of face masks.",
+      "second": "Just click the button to try the demo and see for yourself.",
+      "btn": "Try our demo."
     }
   },
   {
-    "phrase": "“What you don’t do determines what you can do.”\n Tim Ferriss",
+    "phrase": "“I wear my mask to protect you. \nYou wear your mask to protect me.”\n Dr. Jay C. Butler, CDC",
     "information": {
       "first": "Machine learning is a subarea of Artificial Intelligence that has shown high efficiency in such situations\n            to understand, visualize and understand information appropriately.",
       "second": "Due to the current situation, one of the rules is to wear a mask as a protection and hygiene measure. Due to\n            this situation, there is a need to be able to recognize whether people are wearing face masks, since it is\n            currently a mandatory measure in most centers or institutions."
     }
   },
   {
-    "phrase": "FACE"
+    "phrase": "PUT YOUR\n MASK ON"
   },
   {
     "title": {
-      "first": "How facial",
+      "first": "How does facial",
       "second": "recognition",
-      "third": "works?"
+      "third": "work?"
     },
     "items": [
       {
@@ -59,7 +59,7 @@ const data = [
       {
         icon: globe,
         title: "Testing our model on real data",
-        info: "We use \"OpenCV\" for the deep learning of the photos and the detection of the masks."
+        info: "We use \"PyTorch\" for the deep learning of the photos and the detection of the masks."
       },
       {
         icon: qrcode,
@@ -69,7 +69,7 @@ const data = [
     ]
   },
   {
-    "title": "Do you have any doubts about how it was done?",
+    "title": "Want to learn more? Send us an email.",
     "btn": "Send"
   }
 ];

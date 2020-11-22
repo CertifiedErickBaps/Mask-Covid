@@ -13,7 +13,7 @@
       width: 590px;
       height: 600px;
       object-fit: contain;
-      top: 10rem;
+      top: 16rem;
       left: 2rem;
     }
 
@@ -38,7 +38,7 @@
     .phrase {
       display: flex;
       align-items: end;
-      margin-bottom: 5rem;
+      margin:80px;
       .flex-container {
         justify-content: center;
 
@@ -46,7 +46,7 @@
           span {
             font-style: normal;
             font-weight: 600;
-            font-size: 38px;
+            font-size: 28px;
             text-align: center;
             color: $white;
           }

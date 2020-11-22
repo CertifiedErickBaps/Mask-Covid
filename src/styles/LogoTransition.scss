@@ -3,19 +3,21 @@
 .logo-container {
   position: relative;
   background: $primary;
-  height: 650px;
+  height: 1200px;
   .text {
     display: flex;
     align-items: center;
     justify-content: center;
+
     span {
       position: absolute;
       bottom: 50%;
-      margin-bottom: -320px;
+      margin-bottom: -450px;
       font-style: normal;
       font-weight: 900;
       font-size: 400px;
-      line-height: 754px;
+      text-align:center;
+      line-height: 300px;
       background-image: url("../images/maleMask.jpg");
       background-size: cover;
       background-clip: text;
