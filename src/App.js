@@ -6,6 +6,7 @@ import "./styles/App.scss";
 
 import Home from "./pages/Home";
 import CameraDemo from "./pages/CameraDemo";
+import CameraDemo2 from "./pages/CameraDemo2";
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
       <Route exact path="/demo">
         <CameraDemo/>
       </Route>
+
+      <Route exact path="/demo-realtime">
+        <CameraDemo2/>
+      </Route>
+
       <Route exact path="/">
         <Home/>
       </Route>
